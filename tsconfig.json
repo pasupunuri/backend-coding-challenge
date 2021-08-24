@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es6",
+      "dom",
+      "es2017",
+      "es2019"
+    ],
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "~*": [
+        "app/vue/*",
+      ],
+      "*": [
+        "node_modules/*",
+        "app/vue/*",
+      ],
+    },
+    "resolveJsonModule": true,
+    "sourceMap": false,
+    "target": "es5",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "**/*.test.ts",
+    "node_modules",
+    "vendor",
+    "public"
+  ],
+  "compileOnSave": false
+}

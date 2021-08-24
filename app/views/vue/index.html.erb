@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airports</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https:" />
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'app' %>
+
+    <meta name="ENV_API_BASE_URL" content="<%= ENV['API_BASE_URL'] || 'http://localhost:3000/api/v1' %>"/>
+  </head>
+
+  <body>
+    <%= javascript_pack_tag 'app' %>
+  </body>
+</html>

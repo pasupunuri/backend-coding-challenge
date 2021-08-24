@@ -1,0 +1,89 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-rails
+
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  NewCops: enable
+  Exclude:
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'lib/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'spec/fixtures/**/*'
+    - 'Guardfile'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'spec/factories/**/*'
+
+Lint/DuplicateMethods:
+  Enabled: true
+
+Layout/LineLength:
+  Enabled: false # 85 offenses to go
+  Max: 100 # based on survey in Slack
+  Exclude:
+    - 'spec/**/*'
+  IgnoredPatterns: ['(\A|\s)#']
+
+Metrics/BlockLength:
+  Max: 100
+  Exclude:
+    - 'spec/**/*'
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Layout/EmptyLinesAroundAccessModifier:
+  EnforcedStyle: around
+
+Layout/DotPosition:
+  Enabled: true
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/WordArray:
+  EnforcedStyle: percent
+
+Style/SymbolArray:
+  EnforcedStyle: percent
