@@ -2,7 +2,7 @@
 
 Thanks so much for your interest in working at [Lufthansa Innovation Hub](https://lh-innovationhub.de/) as a [Senior backend developer](https://weworkremotely.com/remote-jobs/lufthansa-innovation-hub-senior-backend-developer-ruby)! Below is a challenge we'd like to have you do. The primary purpose of this is to understand how you solve engineering challenges.
 
-**You should spend no more than 1 hour on this project.** 
+**You should spend no more than 1 hour on this project.**
 
 ## 🔐 The challenge
 
@@ -33,7 +33,11 @@ Ultimately, it's more important for us to understand your thought process and wh
 
 **Reply to your job application email thread with your solution to the challenge and we'll go from there!**
 
-## Getting Started
+## ✍️ Next steps
+
+After this coding challenge, we'll review your submission carefully and get back to you with our feedback. If we liked it, we'll reach out to schedule one more additional call with some of your future team members to see if we'd be a great match. If that call goes well, you can expect an offer in your inbox. If you have any additional questions before starting on this coding challenge, don't hesitate to ask!
+
+## 💨 Let's go!
 
 The app is designed to work out of the box with no external dependencies, other than gems and Node modules.
 
@@ -42,14 +46,16 @@ bundle install
 yarn install
 ```
 
-## Running locally
+### Running locally
 
-### Frontend
+#### Frontend
 
 ```
 ./bin/webpack-dev-server
 ```
-### Backend
+
+#### Backend
+
 ```shell
 rails s
 ```
