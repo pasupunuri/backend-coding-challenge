@@ -27,9 +27,9 @@ We want to build an app by Rails standards with specs. Database search must be f
 
 ## 📦 Deliverables
 
-As an asynchronous company, this test project will be done asynchronously. **You may submit your challenge response in text or video, or a mix of the two.** Video is the preferred method.
+As an asynchronous company, this test project will be done asynchronously. Please record your screen and talk us through the coding exercise as you work through it. Don't hesitate to think out loud—that's the interesting part!
 
-Ultimately, it's more important for us to understand your thought process and why you make the decisions you do versus the format you use. Whatever format helps you convey your solution to the challenge is fine with us.
+Ultimately, it's more important for us to understand your thought process and why you make the decisions you do. You can record & deliver the video in whatever format you prefer: Loom, unlisted YouTube video, …
 
 **Reply to your job application email thread with your solution to the challenge and we'll go from there!**
 
