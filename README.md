@@ -14,7 +14,7 @@ Your challenge is to:
 - Seed airports and check that the number reported is correct using Rails console
 - Write required routes + endpoint that returns airports
 - Add params to return airports only for specific countries
-- Build pagination using `[Pagy](https://ddnexus.github.io/pagy/how-to#quick-start&gsc.tab=0)`
+- Build pagination using [`Pagy`](https://ddnexus.github.io/pagy/how-to#quick-start&gsc.tab=0)
 - There are lots of non-relevant (small) airports, make sure the most relevant airports are returned first. Required data is already in the model.
 - Add specs to test what you normally would in such an app
 
