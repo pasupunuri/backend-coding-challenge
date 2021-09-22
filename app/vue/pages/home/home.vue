@@ -22,6 +22,11 @@
         </div>
       </div>
     </div>
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      <button v-on:click="loadAirports(currentPage - 1)" :disabled="currentPage < 2"> Prev </button>
+      <span style='margin: 10px;'> {{ currentPage}}/{{totalPages }} </span>
+      <button v-on:click="loadAirports(currentPage + 1)" :disabled="currentPage == totalPages"> Next </button>
+    </div>
   </div>
 </template>
 
@@ -32,22 +37,28 @@ import axios from '~plugins/axios'
 import Airport from '~types/airport'
 
 interface Data {
-  airports: Airport[];
+  airports: Airport[],
+  currentPage: number,
+  totelPages: number
 }
 
 export default Vue.extend({
   data(): Data {
     return {
       airports: [],
+      currentPage: 0,
+      totalPages: 0
     }
   },
   mounted() {
-    this.loadAirports()
+    this.loadAirports(1)
   },
   methods: {
-    async loadAirports() {
-      const response = await axios.get<Airport[]>('/airports', { params: { countries: ['AT', 'CH'] } })
+    async loadAirports(page : number) {
+      const response = await axios.get<Airport[]>('/airports', { params: { countries: ['AT', 'CH'], page } })
       this.airports = response.data
+      this.currentPage = response.headers['current-page'] * 1
+      this.totalPages = response.headers['total-pages'] * 1
     },
   },
 })

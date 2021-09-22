@@ -18,6 +18,7 @@ namespace :seeds do
             .with_indifferent_access
             .merge(timestamps)
             .merge(passenger_volume: data_sets[:passenger_volumes_csv].find { |fixup_row| fixup_row['IATA'] == row['iata'] }.to_h['Passengers']&.to_i)
+            .merge(country_alpha2: data_sets[:countries_hash][row['country']])
             .slice(*Airport.column_names)
       end.uniq { |row| row[:uid] },
     )
@@ -33,6 +34,7 @@ namespace :seeds do
   def read_static_files_airports(country_column_name = 'country')
     # rubocop:disable Layout/LineLength
     openflight_data   = File.expand_path(File.join(File.dirname(__FILE__), 'data', 'openflight', 'airports.dat'))
+    countries_data   = File.expand_path(File.join(File.dirname(__FILE__), 'data', 'openflight', 'countries.dat'))
     passenger_volumes = File.expand_path(File.join(File.dirname(__FILE__), 'data', 'airports_by_passengers.csv'))
     headers           = %("uid","name","city","#{country_column_name}","iata","icao","latitude","longitude","altitude","timezone","dst","timezone_olson","kind","source"\n)
     # rubocop:enable Layout/LineLength
@@ -45,10 +47,14 @@ namespace :seeds do
     passenger_volumes_csv = File.read(passenger_volumes)
     passenger_volumes_csv = CSV.parse(passenger_volumes_csv.gsub('\"', '""'), headers: true)
 
+    countries_csv = File.read(countries_data)
+    countries_hash = CSV.parse(countries_csv.gsub('\"', '""')).reduce({}){|acc, arr| acc.merge!(arr[0] => arr[1])}
+
     {
       headers: headers,
       openflight_csv: openflight_csv,
       passenger_volumes_csv: passenger_volumes_csv,
+      countries_hash: countries_hash
     }
   end
 end

@@ -14,5 +14,14 @@ RSpec.describe 'API::V1::AirportsController', type: :request do
       expect(response.status).to eq(200)
       expect(json.size).to eq(6)
     end
+    
+    # Check request is returning only valid results when countries passed
+    # Check request is returning in proper order of results
+
+    # it 'busy one on top', :aggregate_failures do
+    #   airports_request
+
+    #   expect().to eq(6)
+    # end
   end
 end

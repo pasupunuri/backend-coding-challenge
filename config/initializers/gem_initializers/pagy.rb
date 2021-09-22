@@ -1,1 +1,2 @@
-Pagy::VARS[:max_per_page] = 100
+require 'pagy/extras/headers'
+Pagy::VARS[:items] = 20
